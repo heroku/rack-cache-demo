@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   encoding: utf8
-  database: hstore_example_development
+  database: example_development
   pool: 5
   host: localhost
   # username: root
@@ -10,7 +10,7 @@ development:
 test:
   adapter: postgresql
   encoding: utf8
-  database: hstore_example_test
+  database: example_test
   pool: 5
   host: localhost
   # username: root
@@ -18,7 +18,7 @@ test:
 production:
   adapter: postgresql
   encoding: utf8
-  database: hstore_example_production
+  database: example_production
   pool: 5
   host: localhost
   # username: root
