@@ -19,8 +19,6 @@ Example::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
-  config.static_cache_control = "public, max-age=2592000"
-
   # Defaults to Rails.root.join("public/assets")
   # config.assets.manifest = YOUR_PATH
 
@@ -61,6 +59,15 @@ Example::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+
+  config.action_dispatch.rack_cache = {
+                          :metastore    => Dalli::Client.new,
+                          :entitystore  => 'file:tmp/cache/rack/body',
+                          :allow_reload => false } # very changed
+
+  config.static_cache_control = "public, max-age=2592000" # changed
+
 
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
