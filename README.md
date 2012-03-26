@@ -24,7 +24,7 @@ Create your production database
 
 Start your server
 
-```
+```shell
   foreman start # production
 ```
 
@@ -34,7 +34,7 @@ Visit http://localhost:5000 and view your logs, you should see some cache entrie
     cache: [GET /assets/application-193197163ac0c1601c69cbdaf22f6ce6.css] miss, store
     cache: [GET /assets/application-bf044948e75c7535c35baf4b42604116.js] miss, store
     cache: [GET /assets/rails-782b548cc1ba7f898cdad2d9eb8420d2.png] miss, store
-```shell
+```
 
 Refresh the page and you should see that those entries can be pulled fresh from cache
 
@@ -42,7 +42,7 @@ Refresh the page and you should see that those entries can be pulled fresh from 
     cache: [GET /assets/application-193197163ac0c1601c69cbdaf22f6ce6.css] fresh
     cache: [GET /assets/application-bf044948e75c7535c35baf4b42604116.js] fresh
     cache: [GET /assets/rails-782b548cc1ba7f898cdad2d9eb8420d2.png] fresh
-```shell
+```
 
 When you modify a file such as `app/assets/stylsheets/screen.css` and run `rake assets:precompile` and then start and stop your server, you should see that there is now a new digest for the file and it must be stored in cache again.
 
@@ -56,7 +56,7 @@ The metastore holds metadata about the objects in cache. Metastore entries are s
 
 ### Rack::Cache Entitystore
 
-The entity store is where the objects get cached. Entity store objects are typically large and accessed infrequently. For that reason it might make sense to store them on disk rather than to take up a large amount of room in Memcache. 
+The entity store is where the objects get cached. Entity store objects are typically large and accessed infrequently. For that reason it might make sense to store them on disk rather than to take up a large amount of room in Memcache.
 
 
 ## Contact
