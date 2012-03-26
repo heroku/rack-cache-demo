@@ -24,7 +24,7 @@ Create your production database
 
 Start your server
 
-```
+```shell
   foreman start # production
 ```
 
@@ -56,7 +56,7 @@ The metastore holds metadata about the objects in cache. Metastore entries are s
 
 ### Rack::Cache Entitystore
 
-The entity store is where the objects get cached. Entity store objects are typically large and accessed infrequently. For that reason it might make sense to store them on disk rather than to take up a large amount of room in Memcache. 
+The entity store is where the objects get cached. Entity store objects are typically large and accessed infrequently. For that reason it might make sense to store them on disk rather than to take up a large amount of room in Memcache.
 
 
 ## Contact
