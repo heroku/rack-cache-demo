@@ -61,13 +61,16 @@ Example::Application.configure do
   config.active_support.deprecation = :notify
 
 
-  # config.action_dispatch.rack_cache = {
-  #                         :metastore    => Dalli::Client.new,
-  #                         :entitystore  => 'file:tmp/cache/rack/body',
-  #                         :allow_reload => false } # very changed
-  #
-  # config.static_cache_control = "public, max-age=2592000" # changed
+  config.action_dispatch.rack_cache = {
+                          :metastore    => Dalli::Client.new,
+                          :entitystore  => 'file:tmp/cache/rack/body',
+                          :allow_reload => false } # very changed
 
+  config.static_cache_control = "public, max-age=2592000" # changed
+
+
+  require 'rack/cache'
+  config.middleware.delete(Rack::Cache)
 
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
