@@ -15,7 +15,7 @@ module Example
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    config.cache_store = :dalli_store
+    config.cache_store = :mem_cache_store
 
 
     # Custom directories with classes and modules you want to be autoloadable.
